@@ -1,24 +1,17 @@
-package com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service;
-
-import java.util.Arrays;
-import java.util.HashSet;
+package pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Rol;
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Usuario;
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.repository.RolRepository;
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.repository.UsuarioRepository;
+import pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.model.Usuario;
+import pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@Autowired
-	private RolRepository rolRepository;
 	
 	private BCryptPasswordEncoder 
 		bCryptPasswordEncoder = 
@@ -36,10 +29,6 @@ public class UsuarioService {
 				bCryptPasswordEncoder
 					.encode(usuario.getPassword()));
 		usuario.setActivo(true);
-		Rol rol = rolRepository
-				.findByNomrol("ADMIN");
-		usuario.setRoles(new HashSet<Rol>(
-				Arrays.asList(rol)));
 		return usuarioRepository.save(usuario);
 	}
 

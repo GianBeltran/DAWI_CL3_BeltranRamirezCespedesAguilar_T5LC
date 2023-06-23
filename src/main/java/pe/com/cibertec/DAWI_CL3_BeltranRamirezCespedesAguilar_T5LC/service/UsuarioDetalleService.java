@@ -1,4 +1,4 @@
-package com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service;
+package pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,8 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Usuario;
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Rol;
+import pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.model.Usuario;
 
 @Service
 public class UsuarioDetalleService 
@@ -30,33 +29,8 @@ public class UsuarioDetalleService
 		Usuario usuario = 
 				usuarioService
 				.buscarUsuarioPorNomusuario(username);		
-		return usuarioPorAutenticacion(usuario, 
-				obtenerAutorizacionUsuario(usuario.getRoles()));
+		return usuarioPorAutenticacion(usuario);
 	}
 	
-	private List<GrantedAuthority> 
-		obtenerAutorizacionUsuario(
-				Set<Rol> listRoles){
-		Set<GrantedAuthority> roles = 
-				new HashSet<GrantedAuthority>();
-		for(Rol rol: listRoles) {
-			roles.add(new 
-					SimpleGrantedAuthority(rol.getNomrol()));
-		}
-		List<GrantedAuthority> grantedAuthorities 
-			= new ArrayList<>(roles);
-		return grantedAuthorities;
-		
-		
-	}
-	
-	private UserDetails usuarioPorAutenticacion(
-			Usuario usuario,
-			List<GrantedAuthority> authorityList) {
-		return new User(usuario.getNomusuario(),
-				usuario.getPassword(),
-				usuario.getActivo(),
-				true, true, true, authorityList);
-	}
 
 }
