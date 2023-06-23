@@ -17,17 +17,13 @@ public class UsuarioService {
 		bCryptPasswordEncoder = 
 			new BCryptPasswordEncoder();
 	
-	public Usuario buscarUsuarioPorNomusuario
-		(String nomUsuario) {
+	public Usuario buscarUsuarioPorNomusuario(String nomUsuario) {
 		return usuarioRepository
 				.findByNomusuario(nomUsuario);
 	}
 	
-	public Usuario guardarUsuario(
-			Usuario usuario) {
-		usuario.setPassword(
-				bCryptPasswordEncoder
-					.encode(usuario.getPassword()));
+	public Usuario guardarUsuario(Usuario usuario) {
+		usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
 		usuario.setActivo(true);
 		return usuarioRepository.save(usuario);
 	}

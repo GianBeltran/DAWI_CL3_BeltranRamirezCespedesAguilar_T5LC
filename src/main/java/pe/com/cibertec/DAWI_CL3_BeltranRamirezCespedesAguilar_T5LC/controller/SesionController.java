@@ -26,12 +26,9 @@ public class SesionController {
 		return "sesiob/frmRegistro";
 	}
 	@PostMapping("/guardarUsuario")
-	public String guardarUsuario(
-			@ModelAttribute Usuario usuario,
-			Model model) {
+	public String guardarUsuario(@ModelAttribute Usuario usuario, Model model) {
 		usuarioService.guardarUsuario(usuario);
-		model.addAttribute("registroCorrecto",
-				true);
+		model.addAttribute("registroCorrecto", true);
 		return "sesion/frmRegistro";
 	}
 }
