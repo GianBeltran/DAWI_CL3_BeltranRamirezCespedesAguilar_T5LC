@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.model.bd.Rol;
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.model.bd.Usuario;
+import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Rol;
+import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Usuario;
 import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.repository.RolRepository;
 import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.repository.UsuarioRepository;
 
