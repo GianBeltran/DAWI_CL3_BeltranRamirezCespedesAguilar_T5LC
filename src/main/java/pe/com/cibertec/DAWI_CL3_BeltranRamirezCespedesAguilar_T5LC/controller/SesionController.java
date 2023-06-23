@@ -1,4 +1,4 @@
-package com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.controller;
+package pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Usuario;
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service.UsuarioService;
-
-
+import pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.model.Usuario;
+import pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service.UsuarioService;
 
 
 @Controller

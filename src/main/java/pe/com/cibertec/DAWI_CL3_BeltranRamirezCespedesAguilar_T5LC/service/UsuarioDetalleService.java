@@ -29,8 +29,33 @@ public class UsuarioDetalleService
 		Usuario usuario = 
 				usuarioService
 				.buscarUsuarioPorNomusuario(username);		
-		return usuarioPorAutenticacion(usuario);
+		return usuarioPorAutenticacion(usuario, 
+				obtenerAutorizacionUsuario(usuario.getRoles()));
 	}
 	
+	private List<GrantedAuthority> 
+		obtenerAutorizacionUsuario(
+				Set<Rol> listRoles){
+		Set<GrantedAuthority> roles = 
+				new HashSet<GrantedAuthority>();
+		for(Rol rol: listRoles) {
+			roles.add(new 
+					SimpleGrantedAuthority(rol.getNomrol()));
+		}
+		List<GrantedAuthority> grantedAuthorities 
+			= new ArrayList<>(roles);
+		return grantedAuthorities;
+		
+		
+	}
+	
+	private UserDetails usuarioPorAutenticacion(
+			Usuario usuario,
+			List<GrantedAuthority> authorityList) {
+		return new User(usuario.getNomusuario(),
+				usuario.getPassword(),
+				usuario.getActivo(),
+				true, true, true, authorityList);
+	}
 
 }

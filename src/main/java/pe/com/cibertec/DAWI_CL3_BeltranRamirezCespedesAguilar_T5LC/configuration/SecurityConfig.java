@@ -1,4 +1,4 @@
-package com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.configuration;
+package pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service.UsuarioDetalleService;
+import pe.com.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.service.UsuarioDetalleService;
 import lombok.RequiredArgsConstructor;
 
 
