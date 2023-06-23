@@ -14,8 +14,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.pe.cibertec.appcinecibertec.model.bd.Usuario;
-import com.pe.cibertec.appcinecibertec.model.bd.Rol;
+import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Usuario;
+import com.pe.cibertec.DAWI_CL3_BeltranRamirezCespedesAguilar_T5LC.modelo.bd.Rol;
 
 @Service
 public class UsuarioDetalleService 
